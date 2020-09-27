@@ -11,7 +11,7 @@ function expand_about() {
 		$('#about').css("background-color", "#537f24");
 		$('#aboutdiv').css({"opacity": "1", "padding-top": "10px", "padding-bottom": "10px", "margin-top":"10px", "max-height": "500px"});
 		$('#projectsdiv').css({"margin-top": "10px"});
-		$('#aboutdiv').html("<h3> Welcome to me site! I'm a backend software engineer who needs to practice her web skills. What you are looking at is a work-in-progress practice-ground for me to better aquaint myself with javascript html and css. My goal is to create everything without the use of any external frameworks. Wish me luck, and I hope you have fun poking around! </h3>");
+		$('#aboutdiv').html("<h3> Welcome to me site! This is an old project of mine that helped me learn the basics of pure HTML/CSS/JS programming. I have since become intimately familiar with React...but haven't yet found the motivation to rewrite all of the stuff I have here. Feel free to poke around! </h3>");
 		$('#aboutdiv').addClass("visible");
 	} else {
 		$('#aboutdiv').css({"opacity": "0", "max-height": "0px", "padding-top": "0px", "padding-bottom": "0px", "margin-top":"0px"});
@@ -32,10 +32,7 @@ function expand_projects() {
 							"<span class='buttons'><button class='project_button' onclick='location.href=\"https://anathebealo.github.io/map/map.html\"'>Places I've been</button>" +
 							"<button class='project_button' onclick='location.href=\"https://anathebealo.github.io/hashtables\"'>Hashtable Practice</button></span>" +
 							"<span class='buttons'><button class='project_button' onclick='location.href=\"https://anathebealo.github.io/greedy\"'>Greedy Game</button>" +
-							"<button class='project_button' onclick='location.href=\"https://anathebealo.github.io/greedy\"'>Graph Algorithm Visualizer</button></span>");
-		// $('#projectsdiv').html("<div id='col1'> </div>" + 
-		// 					   "<ul> "	+
-		// 					   "<div id='col2'> </div> ");
+							"<button class='project_button' onclick='location.href=\"https://anathebealo.github.io/graph_ai_algs\"'>Graph Algorithm Visualizer</button></span>");
 		$('#projectsdiv').addClass("visible");
 	} else {
 		$('#projectsdiv').css({"opacity": "0", "padding": "0px", "max-height": "0px"});
