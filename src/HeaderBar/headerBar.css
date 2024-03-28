@@ -1,0 +1,20 @@
+.headerBar {
+    display: flex;
+    border-bottom: 3px solid rgb(224, 224, 224);
+    position: sticky;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 10;
+}
+
+.headerLink {
+    height: 23px;
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+}
+
+.headerLink:hover {
+    font-weight: 500;
+}

@@ -1,0 +1,60 @@
+.palettePage {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 46px);
+    overflow-y: hidden;
+}
+
+.paletteContainer {
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    transition: height .5s;
+}
+
+.halfHeight {
+    height: 50%;
+}
+
+.fullHeight {
+    height: 100%;
+}
+
+.hidden {
+    height: 0%;
+}
+
+.colorPanel {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.colorPanelHexColor {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.colorPanelColorName {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.foldButton {
+    background-color: white;
+    width: 100%;
+    overflow: hidden;
+    border: none;
+    padding: 5px;
+}
+
+.foldIcon {
+    width: 16px;
+    margin: auto;
+}
+

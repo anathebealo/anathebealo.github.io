@@ -1,0 +1,19 @@
+.colorTable {
+    width: 100%;
+    margin-left: 30px;
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+  }
+
+.colorTable tr {
+    &:nth-of-type(odd) {
+        background-Color: #0000000a;
+    }
+}
+
+.colorTable th {
+    padding: 15px;
+    font-weight: normal;
+}

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.b919ccb1.css",
+    "main.js": "/react-gh-pages/static/js/main.5c3374ba.js",
+    "static/media/abealo_9-26-2020_resume.pdf": "/react-gh-pages/static/media/abealo_9-26-2020_resume.62c03744a0a00cb3f041.pdf",
+    "index.html": "/react-gh-pages/index.html",
+    "main.b919ccb1.css.map": "/react-gh-pages/static/css/main.b919ccb1.css.map",
+    "main.5c3374ba.js.map": "/react-gh-pages/static/js/main.5c3374ba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b919ccb1.css",
+    "static/js/main.5c3374ba.js"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+    "title": "Chocolate Sauce",
+    "meal": "dessert",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Chocolate_syrup_topping_on_ice_cream.JPG",
+    "ingredients": [
+        "3/4 cup semisweet chocolate chips",
+        "1/2 stick (1/4 cup) unsalted butter",
+        "2/3 cup sugar",
+        "1 5-ounce can evaporated milk"
+    ],
+    "directions": [
+        "In a small saucepan melt the chocolate and the butter over medium heat until melted together and stirs smooth.",
+        "Add the sugar.",
+        "Gradually stir in the evaporated milk.",
+        "Bring the mixture to a boil and then reduce heat.",
+        "Boil gently over low heat for 8 minutes (make sure to stir frequently so it doesn't burn).",
+        "Remove from heat and cool slightly.",
+        "Serve warm over ice cream!"
+    ],
+    "tags": [
+        "dessert",
+        "chocolate",
+        "sauce"
+    ]
+}

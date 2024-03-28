@@ -1,0 +1,151 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 200px;
+    background-color: white;
+    min-height: 350px; 
+}
+
+.linkContainer { 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    view-transition-name: linkContainer;
+}
+
+.linkDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+
+    text-align: center;
+    border-radius: 20px;
+
+    -webkit-transition: border-radius .5s, width .5s, height .5s, transform .5s ;
+    transition: border-radius .5s , width .5s, height .5s, transform .5s ;
+}
+
+.linkDiv h3 {
+    margin: 20% 0px 0px 0px;
+    transition: margin .2s linear .05s;
+}
+
+.linkDiv p {
+    visibility: hidden;
+    transition: visibility 0s linear 0s;
+    font-style: italic;
+    margin-bottom: 0px;
+}
+
+.linkDiv:hover {
+    border-radius: 20px;
+    transform: scale(1.05);
+}
+
+.linkDiv:hover p {
+    visibility: visible;
+    transition: visibility 0s linear .1s;
+}
+
+.linkDiv:hover h3 {
+    margin: 0px;
+    transition: margin .2s linear .0s;
+
+}
+  
+.big { 
+    width: 90%;
+    height: 90vh;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: blue !important;
+    border: 1px solid black;
+    z-index: 10;
+}
+
+.recipes-container { 
+    height: 90vh;
+    width: 100%;
+}
+
+.disco-hall {
+    display: flex;
+    flex-direction: column;
+}
+
+.disco-row {
+    display: flex;
+}
+
+.light-box {
+    width: 50px;
+    height: 50px;
+}
+
+.colorCorner {
+    position: absolute;
+    right: 1.5em;
+    top: 1.5em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1em;
+
+    background-color: white;
+    padding: .25em;
+}
+
+.colorInfoContainer {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.colorButton {
+    background-color: white;
+    border: solid 2px black;
+    padding: .75em;
+    cursor: pointer;
+}
+
+.iconStyle {
+    height: 1.5em;
+    width: 1.5em;
+    cursor: pointer;
+}
+
+.infoBlob {
+    max-width: 150px; 
+    padding: .5em .25em .5em .5em;
+    border: solid 1px black;
+}
+
+.infoText {
+    margin: 0px;
+    text-align: left;
+}
+
+.smallInfoBlob {
+    height: 0px;
+    border: none !important;
+}
+
+.hidden {
+    opacity: 0%;
+}
+
+.visible {
+    opacity: 100%;
+}

@@ -1,0 +1,15 @@
+.recipes-container {
+    margin: 50px;
+
+}
+
+.recipeCard {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #4b4b4b;
+    padding: 10px;
+}
+
+.recipeCard:hover {
+    transform: scale(1.05);
+}

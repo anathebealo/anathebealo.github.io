@@ -1,0 +1,31 @@
+{
+    "title": "Lemon Bars",
+    "meal": "dessert",
+    "image_url": "https://www.onceuponachef.com/images/2019/04/Luscious-Lemon-Bars.jpg",
+    "ingredients": [
+        "1 cup butter",
+"2 cups flour",
+"1/2 cups confectioners' sugar",
+"4 eggs",
+"2 cups sugar",
+"1/4 cup flour",
+"1 tsp baking powder",
+"6 tblsp fresh lemon juice",
+"grated peel of a lemon",
+"confectioners' sugar"
+    ],
+    "directions": [
+        "Preheat oven to 350 degrees",
+        "Blend 2 cups flour, butter and confectioners' sugar thoroughly.",
+        "Press dough into a well greased and floured 13x9x2-inch pan.",
+        "Bake for 25 minutes in preheated oven (watch closely! Make sure it doesn't burn!)",
+        "Beat eggs until frothy. Add all remaining ingredients and beat until smooth.",
+        "Pour mixture into the crust and bake 20-25 minutes at 350 degrees.",
+        "Dust with confectioners' sugar and cut into squares.",
+        "Refridgerate."
+    ],
+    "tags": [
+        "dessert",
+        "fruit"
+    ]
+}

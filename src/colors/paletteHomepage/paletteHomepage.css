@@ -1,0 +1,32 @@
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .stickyContainer {
+    position: sticky;
+    top: 46px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid lightgrey;
+  }
+  
+  .dark-app-header .stickyContainer {
+    position: sticky;
+    top: 46px;
+    width: 100%;
+    margin: auto;
+    background-color: #424249;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+.header-button {
+    margin: 14px 20px 10px 20px !important;
+    height: 40px;
+}

@@ -1,0 +1,30 @@
+{
+    "title": "Blueberry Muffins",
+    "meal": "breakfast",
+    "image_url": "https://www.allrecipes.com/thmb/7JM6ev8saEJ8zh2lg_t3hjDv_wM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/662790-42748a55c35047ba93ce1186d97f2e6c.jpg",
+    "ingredients": [
+        "1/2 cup butter or vegetable oil",
+        "1 cup sugar",
+        "2 eggs",
+        "2 cups flour",
+        "2 tsp baking powder",
+        "1/2 tsp salt",
+        "1/2 tsp cinnamon",
+        "1 tsp vanilla extract",
+        "1/2 cup milk",
+        "2 cups blueberries (fresh or frozen)",
+        "2 tsp sugar"
+    ],
+    "directions": [
+        "Preheat oven to 375 degrees.",
+        "Cream butter and sugar. Add the eggs one at a time and mix until blended.",
+        "Fold in the dry ingredients, vanilla, blueberries and milk.",
+        "Grease 12 muffin tins (or use cupcake liners). ",
+        "Pile muffin batter high in tins. ",
+        "Sprinklesugar on tops.",
+        "Bake in oven for 25-30 minutes."
+    ],
+    "tags": [
+        "breakfast"
+    ]
+}

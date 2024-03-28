@@ -1,0 +1,25 @@
+{
+    "title": "Alfredo Sauce",
+    "meal": "dinner",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/The_Only_Original_Alfredo_Sauce_with_Butter_and_Parmesano-Reggiano_Cheese.png",
+    "ingredients": [
+        "3 tbsp unsalted butter",
+        "2 tbsp olive oil",
+        "2 garlic cloves minced",
+        "2 cups heavy cream",
+        "1/4 tsp white pepper",
+        "1/2 cup grated parmesan cheese",
+        "3/4 cup mozzarella cheese"
+    ],
+    "directions": [
+        "Melt butter in a medium saucepan with the olive oil over medium-low heat.",
+        "Add the garlic, white pepper and cream. Bring the mixture to a simmer. Stir often to avoid burnt/gross cream.",
+        "Add the parmesan cheese and simmer sauce for 8-10 minutes to thicken sauce. Make sure it is smooth.",
+        "When sauce has thickened, add the mozzarella cheese and stir frequently until smooth.",
+        "Serve over noodles"
+    ],
+    "tags": [
+        "dinner",
+        "sauce"
+    ]
+}
