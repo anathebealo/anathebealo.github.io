@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.b919ccb1.css",
-    "main.js": "/static/js/main.89b5b39a.js",
+    "main.js": "/static/js/main.0edfd533.js",
     "static/media/abealo_9-26-2020_resume.pdf": "/static/media/abealo_9-26-2020_resume.62c03744a0a00cb3f041.pdf",
     "index.html": "/index.html",
     "main.b919ccb1.css.map": "/static/css/main.b919ccb1.css.map",
-    "main.89b5b39a.js.map": "/static/js/main.89b5b39a.js.map"
+    "main.0edfd533.js.map": "/static/js/main.0edfd533.js.map"
   },
   "entrypoints": [
     "static/css/main.b919ccb1.css",
-    "static/js/main.89b5b39a.js"
+    "static/js/main.0edfd533.js"
   ]
 }

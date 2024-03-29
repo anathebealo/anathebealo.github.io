@@ -75,7 +75,6 @@ const GreedyGame = () => {
   const restartGame = () => {
     setGameIsOver(false);
     setYouLost(false);
-    window.removeEventListener('keydown', eventListener, false);
     setBoard([]);
     setLoadingScreen(true);
   }
@@ -83,14 +82,14 @@ const GreedyGame = () => {
   const youLose = useCallback(() => {
     setGameIsOver(true);
     setYouLost(true);
-    window.removeEventListener('keydown', eventListener, false);
-  }, [eventListener]);
+  }, []);
 
   const isMoveValid = useCallback((x, y) => {
     const tempBoard = cloneDeep(boardRef.current);
     const tempCursorX = cursorXRef.current;
     const tempCursorY = cursorYRef.current;
 
+    // if direction user clicked is immediately out of bounds (i.e. clicked up while on the top row)
     if(tempCursorX + x >= tempBoard.length || 
       tempCursorY + y >= tempBoard[0].length || 
       tempCursorX + x < 0 || 
@@ -99,21 +98,23 @@ const GreedyGame = () => {
       }
 
     let x1 = tempCursorX;
-    let x2 = x1 + x * (tempBoard[tempCursorX + x][tempCursorY + y]);
+    let x2 = tempCursorX + x * (tempBoard[tempCursorX + x][tempCursorY + y]);
     let y1 = tempCursorY;
-    let y2 = y1 + y * (tempBoard[tempCursorX + x][tempCursorY + y]);
-
-    if (tempBoard[tempCursorX + x][tempCursorY + y] !== -1) {
-      if (tempCursorX + x * (tempBoard[tempCursorX + x][tempCursorY + y]) >= 0 && tempCursorX + x * (tempBoard[tempCursorX + x][tempCursorY + y]) < boardWidth &&
-          tempCursorY + y * (tempBoard[tempCursorX + x][tempCursorY + y]) >= 0 && tempCursorY + y * (tempBoard[tempCursorX + x][tempCursorY + y]) < boardHeight) {
+    let y2 = tempCursorY + y * (tempBoard[tempCursorX + x][tempCursorY + y]);
+    
+    if (tempBoard[tempCursorX + x][tempCursorY + y] !== -1) { // cell user clicked into is empty
+      if (x2 >= 0 && x2 < boardWidth &&
+          y2 >= 0 && y2 < boardHeight) {
         if (x1 !== x2) {
           if (x1 < x2) {
+            // user clicked down
             for (let i = x1; i <= x2; i++) {
               if (tempBoard[i][y1] === -1) {
                 return false;
               }
             }
           } else {
+            // user clicked up
             for (let i = x1; i >= x2; i--) {
               if (tempBoard[i][y1] === -1) {
                 return false;
@@ -122,12 +123,14 @@ const GreedyGame = () => {
           }
         } else if (y1 !== y2) {
           if (y1 < y2) {
+            // user clicked right
             for (let i = y1; i <= y2; i++) {
               if (tempBoard[x1][i] === -1) {
                 return false;
               }
             }
           } else {
+            // user clicked left
             for (let i = y1; i >= y2; i--) {
               if (tempBoard[x1][i] === -1) {
                 return false;
@@ -160,26 +163,26 @@ const GreedyGame = () => {
             tempBoard[i][y1] = -1;
           }
           setCursorX(x2);
-          setCursorY(y1);
+          setCursorY(y2);
         } else {
           for (let i = x1; i > x2; i--) {
             tempBoard[i][y1] = -1;
           }
           setCursorX(x2);
-          setCursorY(y1);
+          setCursorY(y2);
         }
       } else if (y1 !== y2) {
         if (y1 < y2) {
           for (let i = y1; i < y2; i++) {
             tempBoard[x1][i] = -1;
           }
-          setCursorX(x1);
+          setCursorX(x2);
           setCursorY(y2);
         } else {
           for (let i = y1; i > y2; i--) {
             tempBoard[x1][i] = -1;
           }
-          setCursorX(x1);
+          setCursorX(x2);
           setCursorY(y2);
         }
       }
@@ -233,8 +236,15 @@ const GreedyGame = () => {
     setGameIsOver(false);
     setYouLost(false);
     setScore(0);
-    window.addEventListener('keydown', eventListener, false);
-  }, [makeNewBoard, eventListener]);
+  }, [makeNewBoard]);
+
+  useEffect(() => {
+    if(youLost) {
+      window.removeEventListener('keydown', eventListener, false);
+    } else {
+      window.addEventListener('keydown', eventListener, false);
+    }
+  }, [youLost, eventListener]);
 
   useEffect(() => {
     initializeGame();
@@ -253,15 +263,15 @@ const GreedyGame = () => {
         : !loadingScreen ? <div id="loser" style={{backgroundColor: "#66ffb3"}}> <p>Score: <strong>{Math.round(score / (boardWidth * boardHeight) * 1000) / 10}%</strong></p></div> : null}
       <br />
       {/* {!loadingScreen && !gameIsOver && !youLost && <div id="loser" style={{backgroundColor: "#66ffb3"}}> <p>Score: <strong>{Math.round(score / (boardWidth * boardHeight) * 1000) / 10}%</strong></p></div>} */}
-      <div id="board">{!isEmpty(board) 
+      <div id="board">{!isEmpty(boardRef.current) 
         ? <table><tbody>
-             {board.map((row, i) => <tr id={i}>
-                { board[0].map((cell, j) => { 
+             {boardRef.current.map((row, i) => <tr id={i}>
+                { boardRef.current[0].map((cell, j) => { 
                   let id= `${i}+${j}`;
-                  return i !== cursorX || j !== cursorY
-                    ? board[i][j] === -1 
+                  return i !== cursorXRef.current || j !== cursorYRef.current
+                    ? boardRef.current[i][j] === -1 
                       ? <td id={id} className='empty'><div> </div></td> 
-                      : <td id={id} className={squareColors[board[i][j]]}>{board[i][j]}</td> 
+                      : <td id={id} className={squareColors[boardRef.current[i][j]]}>{boardRef.current[i][j]}</td> 
                     : <td id='cursor'> <div> </div> </td>
                   })
                 }
