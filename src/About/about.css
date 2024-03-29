@@ -7,3 +7,15 @@
     height: 50vh;
     width: 50vw;
 }
+
+.crop {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 125px;
+}
+
+.crop img {
+    width: 250px;
+    height: auto;
+}
