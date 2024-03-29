@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
+import { Routes, Route, HashRouter, Outlet } from "react-router-dom";
 
 import NoMatch from './NoMatch';
 import HomePage from './HomePage';
@@ -50,7 +50,7 @@ function App() {
     return <div>Loading...</div>
   }
 
-  return <BrowserRouter>
+  return <HashRouter>
     <Routes>
           <Route index={true} path="/" element={<HomePage 
               refreshColors={updateColors}
@@ -74,12 +74,12 @@ function App() {
           <Route path="/photos" element={<Photos />} />
           <Route path="/about">
             <Route index={true} element={<About />} />
-            <Route path="/about/travel" element={<Travel />} />
           </Route>
+          <Route path="/travel" element={<Travel />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
 }
 
 export default App;

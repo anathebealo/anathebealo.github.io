@@ -8,7 +8,7 @@ function About() {
       <h3>Personal</h3>
       <p> I studied computer science and mathematics in college which I now use in my job as a software engineer. 
         At home I have one husband (Chris), one daughter (Phoebe) and two cats (Nibble and Bit). 
-        When I'm not working or taking care of my daughter, you can find me gardening, <a href="/about/travel">
+        When I'm not working or taking care of my daughter, you can find me gardening, <a href="/#/travel">
         traveling </a>, hiking, cooking or playing board games.
       </p>
       <h3>Professional</h3>
