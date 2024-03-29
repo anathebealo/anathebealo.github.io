@@ -22,7 +22,6 @@ const shuffle = (originalArray) => {
 
 export const getPalettes = () => {
   // let shuffledPalettes = shuffle(palettesList);
-  // console.log(shuffledPalettes.length);
   return palettesList;
 }
 

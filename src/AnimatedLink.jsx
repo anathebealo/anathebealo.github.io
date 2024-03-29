@@ -10,12 +10,17 @@ const AnimatedLink = ({ to, children }) => {
     <a
       href={to}
       onClick={(ev) => {
-        ev.preventDefault();
-        document.startViewTransition(() => {
-          flushSync(() => {
-            navigate(to);
+        try {
+          ev.preventDefault();
+          document.startViewTransition(() => {
+            flushSync(() => {
+              navigate(to);
+            });
           });
-        });
+        } catch {
+          // for browsers that are not compatible
+          navigate(to);
+        }
       }}
     >
       {children}

@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.noTransition {
+  transition: none !important;
+}
+
 .colors-link {
   view-transition-name: color-link;
 }

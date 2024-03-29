@@ -24,7 +24,6 @@ function PaletteHomepage() {
   const [favoriteFiltering, setFavoriteFiltering] = useState(false);
 
   const saveToLocalStorage = (data) => {
-    console.log(data);
     setLocalStorageData(data);
     localStorage.setItem('huebert', JSON.stringify(Array.from(data)));
   }
@@ -33,7 +32,6 @@ function PaletteHomepage() {
     let storage = localStorage.getItem(`huebert`);
     if(storage) {
       let jsonStorage = JSON.parse(storage);
-      console.log(jsonStorage);
       let set = new Set(jsonStorage);
       setLocalStorageData(set);
     } else {

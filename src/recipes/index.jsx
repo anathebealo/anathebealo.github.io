@@ -12,7 +12,6 @@ function Recipes() {
 
   const getRecipeDetails = (recipeName) => {
     const recipe = require(`./recipe_data/${recipeName}.json`);
-    // console.log(recipe);
     return {
       ...recipe,
       url: recipeName

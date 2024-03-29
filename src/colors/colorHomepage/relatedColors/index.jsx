@@ -35,7 +35,6 @@ const RelatedColors = ({name, colors, shadeCount, showPalette=true, helperText})
 
     if(lightCorrect) {
       scale = chroma.scale(scale).correctLightness().colors(shadeCount);
-      console.log(scale);
     }
 
     scale = deut ? scale.map(hex => blinder.deuteranopia(hex)) : scale;

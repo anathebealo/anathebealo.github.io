@@ -22,7 +22,6 @@ function Palette({ palette, filteredColor, pinColor, localStorageData, saveToLoc
   }
 
   const toggleFavorite = () => {
-    console.log(localStorageData);
     if(localStorageData && localStorageData.size !== 0) {
       if(localStorageData.has(palette.id)) {
         localStorageData.delete(palette.id);

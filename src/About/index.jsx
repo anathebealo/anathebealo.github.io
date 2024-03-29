@@ -32,7 +32,7 @@ function About() {
         </a>
         </p>
       </div>
-      <div class="crop">
+      <div className="crop">
         {image === ME ? meImg : image === CHRIS ? chrisImg : image === PHOEBE ? phoebeImg : image === BIT ? bitImg : nibsImg}
       </div>
     </div>
