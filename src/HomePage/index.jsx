@@ -34,6 +34,7 @@ function HomePage({ colors, refreshColors }) {
     setVisibleInfo(!visibleInfo);
   }
 
+
   return (<div style={{ display: 'flex', 'justifyContent': 'center' }}>
     <div className='disco-hall'>
       {Array.apply(null, Array(Math.ceil(height / 50))).map(x => {
