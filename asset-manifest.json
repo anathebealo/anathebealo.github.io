@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.cdba7209.css",
-    "main.js": "/static/js/main.eed2242a.js",
+    "main.js": "/static/js/main.0c307263.js",
     "static/media/phoebe.jpg": "/static/media/phoebe.eec0ee8223564c979d42.jpg",
     "static/media/me.jpg": "/static/media/me.87f189235e1ad7430321.jpg",
     "static/media/bit.jpg": "/static/media/bit.13777af9e83303b0c18e.jpg",
@@ -10,10 +10,10 @@
     "static/media/abealo_9-26-2020_resume.pdf": "/static/media/abealo_9-26-2020_resume.62c03744a0a00cb3f041.pdf",
     "index.html": "/index.html",
     "main.cdba7209.css.map": "/static/css/main.cdba7209.css.map",
-    "main.eed2242a.js.map": "/static/js/main.eed2242a.js.map"
+    "main.0c307263.js.map": "/static/js/main.0c307263.js.map"
   },
   "entrypoints": [
     "static/css/main.cdba7209.css",
-    "static/js/main.eed2242a.js"
+    "static/js/main.0c307263.js"
   ]
 }
