@@ -15,7 +15,8 @@ function LineChart({ chartData, title }) {
               text: title
             },
             legend: {
-              display: false
+              display: true,
+              position: 'top'
             }
           }
         }}

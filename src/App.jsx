@@ -1,6 +1,8 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { Routes, Route, HashRouter, Outlet } from "react-router-dom";
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
 import NoMatch from './NoMatch';
 import HomePage from './HomePage';
@@ -50,14 +52,15 @@ function App() {
     return <div>Loading...</div>
   }
 
-  return <HashRouter>
-    <Routes>
-          <Route index={true} path="/" element={<HomePage 
-              refreshColors={updateColors}
-              colors={colors}
-            />} 
-          />
-          <Route element={ <div><HeaderBar colors={colors} /> <Outlet /></div>} >
+  return <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <HashRouter>
+      <Routes>
+        <Route index={true} path="/" element={<HomePage 
+            refreshColors={updateColors}
+            colors={colors}
+          />} 
+        />
+        <Route element={ <div><HeaderBar colors={colors} /> <Outlet /></div>} >
           <Route path="/colors">
             <Route index={true} element={<PaletteHomepage toggleMode={() => {}} isDark={false}/>} /> 
             <Route path=":hex" element={<ColorHomepage />} /> 
@@ -79,7 +82,8 @@ function App() {
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
-    </HashRouter>
+  </HashRouter>
+</LocalizationProvider>
 }
 
 export default App;
