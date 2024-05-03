@@ -2,6 +2,7 @@ import { useState } from 'react';
 import GreedyGame from './GreedyGame';
 import HashTablePractice from './HashTablePractice';
 import FoodTracking from './FoodTracking';
+import Button from '@mui/material/Button';
 
 const GREEDY_GAME = "GREEDY";
 const HASH_TABLE_PRACTICE = "HASH";
@@ -25,11 +26,10 @@ function Projects() {
 
   return <div 
     className={`projects-container projects-link`} >
-    <h1>Small Projects</h1>
-    <div style={{ display: 'flex' }}>
-      <button onClick={() => setSelectedProject(GREEDY_GAME)}>Greedy Game</button>
-      <button onClick={() => setSelectedProject(HASH_TABLE_PRACTICE)}>Hash Table Practice</button>
-      <button onClick={() => setSelectedProject(PHOEBE_FOOD)}>Phoebe Food Tracking</button>
+    <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+      <h1>Small Projects</h1>
+      <Button onClick={() => setSelectedProject(GREEDY_GAME)} variant="outlined">Greedy Game</Button>
+      <Button onClick={() => setSelectedProject(PHOEBE_FOOD)} variant="outlined">Phoebe Food Tracking</Button>
     </div>
     
     <div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Chart from "chart.js/auto";
 import isUndefined from 'lodash/isUndefined';
+import isEmpty from 'lodash/isEmpty';
 import { CategoryScale } from "chart.js";
 import LineChart from './LineChart';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -141,84 +142,88 @@ function FoodTracking() {
     </div>
   }
 
-  return <div style={{ width: '80%', margin: 'auto' }}>
-   <UploadFile onUpload={onUploadFile} /> <div>
-        {!isUndefined(filteredFeedsArray) && <div>
-          <DatePicker value={dayjs(startDay)} onChange={(newValue) => setTimeStart(newValue)} />
-          <DatePicker value={dayjs(endDay)} onChange={(newValue) => setTimeEnd(newValue)} />
-        </div>}
+  return <div style={{ width: '80%', margin: 'auto', marginTop: '40px' }}>
+    <UploadFile onUpload={onUploadFile} /> <div>
+      {!isEmpty(feedsArray) &&
+        <div>
+          {!isUndefined(filteredFeedsArray) && <div style={{ marginTop: '20px', display: 'flex', gap: '10px'}}>
+            <DatePicker value={dayjs(startDay)} onChange={(newValue) => setTimeStart(newValue)} />
+            <DatePicker value={dayjs(endDay)} onChange={(newValue) => setTimeEnd(newValue)} />
+          </div>}
 
-        <LineChart
-          chartData={{
+          <LineChart
+            chartData={{
+              labels: filteredFeedsArray.map(x => x.date),
+              datasets: [
+                {
+                  label: 'running average intake per day',
+                  backgroundColor: COLORS[4],
+                  borderColor: COLORS[4],
+                  pointRadius: 0,
+                  tension: 0.4,
+                  data: filteredFeedsArray.map(x => x.movingAverages.totalIntake)
+                },
+                {
+                  label: 'intake per day',
+                  backgroundColor: COLORS[0],
+                  borderColor: COLORS[0],
+                  pointRadius: 0,
+                  tension: 0.1,
+                  data: filteredFeedsArray.map(x => x.totalIntake)
+                }
+              ]
+            }}
+            title="Total Intake Per Day" />
+          <LineChart chartData={{
             labels: filteredFeedsArray.map(x => x.date),
             datasets: [
               {
-                label: 'running average intake per day',
+                label: 'running average of average feed amount per day',
                 backgroundColor: COLORS[4],
                 borderColor: COLORS[4],
                 pointRadius: 0,
                 tension: 0.4,
-                data: filteredFeedsArray.map(x => x.movingAverages.totalIntake)
+                data: filteredFeedsArray.map(x => x.movingAverages.averageFeedAmount)
               },
               {
-                label: 'intake per day',
-                backgroundColor: COLORS[0],
-                borderColor: COLORS[0],
+                label: 'average feed amount',
+                backgroundColor: COLORS[5],
+                borderColor: COLORS[5],
                 pointRadius: 0,
                 tension: 0.1,
-                data: filteredFeedsArray.map(x => x.totalIntake)
+                data: filteredFeedsArray.map(x => x.averageFeedAmount)
               }
             ]
           }}
-          title="Total Intake Per Day" />
-        <LineChart chartData={{
-          labels: filteredFeedsArray.map(x => x.date),
-          datasets: [
-            {
-              label: 'running average of average feed amount per day',
-              backgroundColor: COLORS[4],
-              borderColor: COLORS[4],
-              pointRadius: 0,
-              tension: 0.4,
-              data: filteredFeedsArray.map(x => x.movingAverages.averageFeedAmount)
-            },
-            {
-              label: 'average feed amount',
-              backgroundColor: COLORS[5],
-              borderColor: COLORS[5],
-              pointRadius: 0,
-              tension: 0.1,
-              data: filteredFeedsArray.map(x => x.averageFeedAmount)
-            }
-          ]
-        }}
-          title="Average intake per feed" />
+            title="Average intake per feed" />
 
-        <LineChart
-          chartData={{
-            labels: filteredFeedsArray.map(x => x.date),
-            datasets: [
-              {
-                label: 'running average number of feeds',
-                backgroundColor: COLORS[4],
-                borderColor: COLORS[4],
-                pointRadius: 0,
-                tension: 0.4,
-                data: filteredFeedsArray.map(x => x.movingAverages.numberOfFeeds)
-              },
-              {
-                label: 'number of feeds',
-                backgroundColor: COLORS[3],
-                borderColor: COLORS[3],
-                pointRadius: 0,
-                tension: 0.1,
-                data: filteredFeedsArray.map(x => x.numberOfFeeds)
-              }
-            ]
-          }
-          }
-          title="Feeds Per Day" />
-      </div>
+          <LineChart
+            chartData={{
+              labels: filteredFeedsArray.map(x => x.date),
+              datasets: [
+                {
+                  label: 'running average number of feeds',
+                  backgroundColor: COLORS[4],
+                  borderColor: COLORS[4],
+                  pointRadius: 0,
+                  tension: 0.4,
+                  data: filteredFeedsArray.map(x => x.movingAverages.numberOfFeeds)
+                },
+                {
+                  label: 'number of feeds',
+                  backgroundColor: COLORS[3],
+                  borderColor: COLORS[3],
+                  pointRadius: 0,
+                  tension: 0.1,
+                  data: filteredFeedsArray.map(x => x.numberOfFeeds)
+                }
+              ]
+            }
+            }
+            title="Feeds Per Day" />
+        </div>
+      }
+    </div>
   </div>
 }
 
