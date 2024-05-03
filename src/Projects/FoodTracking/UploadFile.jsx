@@ -27,15 +27,13 @@ const styles = {
     padding: 20,
   },
   file: {
+    display: 'flex',
     background: 'linear-gradient(to bottom, #EEE, #DDD)',
     borderRadius: 20,
-    display: 'flex',
-    height: 120,
-    width: 120,
+    width: '300px',
     position: 'relative',
-    zIndex: 10,
-    flexDirection: 'column',
     justifyContent: 'center',
+    padding: '10px'
   },
   info: {
     alignItems: 'center',
@@ -44,23 +42,15 @@ const styles = {
     paddingLeft: 10,
     paddingRight: 10,
   },
-  size: {
-    backgroundColor: GREY_LIGHT,
-    borderRadius: 3,
-    marginBottom: '0.5em',
-    justifyContent: 'center',
-    display: 'flex',
-  },
   name: {
-    backgroundColor: GREY_LIGHT,
     borderRadius: 3,
     fontSize: 12,
-    marginBottom: '0.5em',
+    marginBottom: '0px',
   },
   progressBar: {
-    bottom: 14,
+    top: 30,
     position: 'absolute',
-    width: '100%',
+    width: '50%',
     paddingLeft: 10,
     paddingRight: 10,
   },
@@ -122,9 +112,6 @@ export default function UploadFile({ onUpload }) {
               <>
                 <div style={styles.file}>
                   <div style={styles.info}>
-                    <span style={styles.size}>
-                      {formatFileSize(acceptedFile.size)}
-                    </span>
                     <span style={styles.name}>{acceptedFile.name}</span>
                   </div>
                   <div style={styles.progressBar}>

@@ -89,13 +89,15 @@ function FoodTracking() {
   Chart.register(CategoryScale);
 
   const onUploadFile = (file) => {
+    console.log(file);
     setFileMisConfigured(false);
     setFileData(undefined);
     const tmpFileData = [];
     file.data.forEach((row, i) => {
-      if (isUndefined(row.Time) && isUndefined(row["Amount (ml)"])) {
-        if (i < row.length - 1) {
+      if (isUndefined(row.Time) || isUndefined(row["Amount (ml)"])) {
+        if (i < file.data.length - 1) {
           setFileMisConfigured(true);
+          console.log('file misconfigured!')
         }
       } else {
         tmpFileData.push({
@@ -140,9 +142,7 @@ function FoodTracking() {
   }
 
   return <div style={{ width: '80%', margin: 'auto' }}>
-    {isUndefined(fileData)
-      ? <UploadFile onUpload={onUploadFile} />
-      : <div>
+   <UploadFile onUpload={onUploadFile} /> <div>
         {!isUndefined(filteredFeedsArray) && <div>
           <DatePicker value={dayjs(startDay)} onChange={(newValue) => setTimeStart(newValue)} />
           <DatePicker value={dayjs(endDay)} onChange={(newValue) => setTimeEnd(newValue)} />
@@ -218,7 +218,7 @@ function FoodTracking() {
           }
           }
           title="Feeds Per Day" />
-      </div>}
+      </div>
   </div>
 }
 
