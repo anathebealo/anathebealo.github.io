@@ -1,6 +1,7 @@
 import HomePage from './HomePage';
 import Colors from './colors';
 import Recipes from './recipes';
+import WikiGraph from './WikiGraph';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,12 @@ const router = createBrowserRouter([
     path: '/recipes',
     element: (
       <Recipes />
+    ),
+  },
+  {
+    path: '/wiki',
+    element: (
+      <WikiGraph />
     ),
   },
 ]);

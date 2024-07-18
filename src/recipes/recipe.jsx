@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-
+import { Button } from '@mui/material';
 import './recipes.css';
 
 function Recipes() {
@@ -12,7 +12,7 @@ function Recipes() {
   }
 
   return <div className={`recipes-container recipe-link`} >
-    <button onClick={goBack}>Back to All Recipes</button>
+    <Button onClick={goBack}>Back to All Recipes</Button>
     <h1>{recipe.title}</h1>
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: "40px" }}>
         <div>
